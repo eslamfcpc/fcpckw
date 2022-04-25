@@ -212,3 +212,5 @@ access_medical_lab_test_create,medical.lab.test.create,model_medical_lab_test_cr
 
 
 access_medical_lab_test_invoice,medical.lab.test.invoice,model_medical_lab_test_invoice,,1,1,1,1
+
+access_medical_config,medical.config,model_medical_config,group_medical_group,1,1,1,1

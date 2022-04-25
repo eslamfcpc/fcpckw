@@ -38,7 +38,7 @@
                         <group>
                             <field name="institution_partner_id"/>
                             <field name="inpatient_registration_id"/>
-                            <field name="duration"/>
+                            <field name="duration" widget="float_time" placeholder="hh:mm"/>
                             <field name="urgency_level"/>
                             <field name="invoice_to_insurer"/>
                             <field name="insurer_id"
