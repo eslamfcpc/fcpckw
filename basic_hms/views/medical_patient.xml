@@ -7,35 +7,71 @@
             <field name="arch" type="xml">
                 <form string="Patient">
                     <header>
-                        <button name="print_report" type="object"
-                            string="Print Patient Card" class="oe_highlight" />
+                        <button name="print_report" 
+                                type="object"
+                                string="Print Patient Card" 
+                                class="oe_highlight" />
                     </header>
                     <sheet>
-                        <field name="photo" nolabel="1"
-                            class="oe_left oe_avatar" img_width="120"
-                            img_height="120" width="120" height="120"
-                            widget="image" />
-                        <div class="oe_title">
-                            <div class="oe_edit_only">
-                                <label for="patient_id" />
-                            </div>
-                            <h1>
-                                <field style="width: 30%%" name="patient_id"
-                                    default_focus="1" placeholder="Patient Name"
-                                    context="{'default_is_patient': 1,'default_is_person': 1}"
-                                     />
-                            </h1>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="open_patient_appointment" 
+                                    type="object"
+                                    class="oe_stat_button" 
+                                    icon="fa-calendar">
+                                <field  name="appointment_counter"
+                                        widget="statinfo"
+                                        string="Appoinment" />
+                            </button>
+                            <button name="open_hsopitalizaton" 
+                                    type="object"
+                                    class="oe_stat_button" 
+                                    icon="fa-heart">
+                                <field  name="hosp_counter"
+                                        widget="statinfo"
+                                        string="Hosptilaization" />
+                            </button>
+                            <button name="open_lab_test" 
+                                    type="object"
+                                    class="oe_stat_button" 
+                                    icon="fa-files-o">
+                                <field  name="medical_lab_counter"
+                                        widget="statinfo"
+                                        string="Hosptilaization" />
+                            </button>
                         </div>
                         <group>
+                            <field name="photo" nolabel="1"
+                                class="oe_left oe_avatar" img_width="140"
+                                img_height="140" width="140" height="140"
+                                widget="image" />
+                        </group>
+                        <group>
                             <group>
+                                <div class="oe_title">
+                                    <div class="oe_edit_only">
+                                        <label for="patient_id" />
+                                    </div>
+                                    <h1>
+                                        <field style="width: 80%%" name="patient_id"
+                                            default_focus="1" placeholder="Patient Name"
+                                            context="{'default_is_patient': 1,'default_is_person': 1}"
+                                            />
+                                    </h1>
+                                </div>
                                 <field name="name" />
                                 <field name="date_of_birth" />
                                 <field name="marital_status" />
+                                <field name="phone"></field>
                             </group>
                             <group>
                                 <field name="sex" />
                                 <field name="age" readonly="1" />
                                 <field name="partner_address_id" />
+                                <field name="relationship"></field>
+                                <field name="civil_number"></field>
+                                <field name="customer_file_number" ></field>
+                                <field name="relative_person"></field>
+                                <field name="civil_attachment" widget="many2many_binary" ></field>
                             </group>
                         </group>
                         <group>

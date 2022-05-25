@@ -11,4 +11,3 @@
                           - now it will be print as per needed
 
                           5.py file improvements: remove commented code from medical_prescription_order.py and medical_appointment.py file
-One Iteration
