@@ -11,6 +11,59 @@ class medical_patient(models.Model):
     _description = 'medical patient'
     _rec_name = 'patient_id'
 
+      
+    def open_patient_appointment(self):
+        return {
+            'name' : _('Appointment'),
+            'domain' :  [('patient_id.patient_id','=', self.patient_id.ids)],
+            'view_type' : 'form',
+            'res_model' : 'medical.appointment',
+            'view_id' : False,
+            'view_mode' : 'tree,form',
+            'type' : 'ir.actions.act_window',
+        }
+    
+    def open_hsopitalizaton(self):
+        return {
+            'name' : _('Hospitalization'),
+            'domain' :  [('patient_id.patient_id','=', self.patient_id.ids)],
+            'view_type' : 'form',
+            'res_model' : 'medical.inpatient.registration',
+            'view_id' : False,
+            'view_mode' : 'tree,form',
+            'type' : 'ir.actions.act_window',
+        }
+    
+
+    def open_lab_test(self):
+        return {
+            'name' : _('Medical Lab Test'),
+            'domain' :  [('patient_id.patient_id','=', self.patient_id.ids)],
+            'view_type' : 'form',
+            'res_model' : 'medical.lab',
+            'view_id' : False,
+            'view_mode' : 'tree,form',
+            'type' : 'ir.actions.act_window',
+        }
+    
+    
+    
+    # Get Count Of Patient Appointment
+    def appointment_count(self):
+        count = self.env['medical.appointment'].search_count([('patient_id.patient_id', '=', self.patient_id.ids)])
+        self.appointment_counter = count
+
+    # Get Count Of Patient Hospitalization
+    def hosptilaization_count(self):
+        count = self.env['medical.inpatient.registration'].search_count([('patient_id.patient_id', '=', self.patient_id.ids)])
+        self.hosp_counter = count
+
+    # Get Count Of Patient Lab Test
+    def lab_count(self):
+        count = self.env['medical.lab'].search_count([('patient_id.patient_id', '=', self.patient_id.ids)])
+        self.medical_lab_counter = count
+
+
     @api.onchange('patient_id')
     def _onchange_patient(self):
         '''
@@ -34,6 +87,10 @@ class medical_patient(models.Model):
             else:
                 rec.age = "No Date Of Birth!!"
 
+
+    appointment_counter = fields.Char(compute='appointment_count') 
+    hosp_counter = fields.Char(compute='hosptilaization_count') 
+    medical_lab_counter = fields.Char(compute='lab_count') 
     patient_id = fields.Many2one('res.partner',domain=[('is_patient','=',True)],string="Patient", required= True)
     name = fields.Char(string='ID', readonly=True)
     last_name = fields.Char('Last Name')
@@ -258,6 +315,23 @@ class medical_patient(models.Model):
     deaths_1st_week = fields.Integer('Deceased after 1st week')
     full_term = fields.Integer('Full Term')
     ses_notes = fields.Text('Notes')
+    phone = fields.Char(String="Phone", related='patient_id.phone', store=True)
+    civil_number = fields.Char(String="Civil Number")
+    customer_file_number = fields.Char(String="Customer File Number", required=True, copy=False, readonly=True,
+                           index=True, default=lambda self: _('New'))
+    relative_person = fields.Many2one('res.partner', related='patient_id.relative_partner_id', store=True, string="Relative Person")
+    relationship = fields.Char(related='patient_id.relationship', store=True, String="Relationship")
+    civil_attachment = fields.Many2many('ir.attachment', string="Civil Attachment", required=True)
+
+
+
+    # Sequence patient Function    
+    @api.model
+    def create(self, vals):
+        if vals.get('customer_file_number', _('New')) == _('New'):
+            vals['customer_file_number'] = self.env['ir.sequence'].next_by_code('patient.sequence') or _('New')
+        result = super(PateintUpdate, self).create(vals)
+        return result
 
     def _valid_field_parameter(self, field, name):
         return name == 'sort' or super()._valid_field_parameter(field, name)
