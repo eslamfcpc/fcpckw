@@ -36,41 +36,51 @@
                                     icon="fa-files-o">
                                 <field  name="medical_lab_counter"
                                         widget="statinfo"
-                                        string="Hosptilaization" />
+                                        string="Lab Tests" />
                             </button>
                         </div>
-                        <group>
-                            <field name="photo" nolabel="1"
-                                class="oe_left oe_avatar" img_width="140"
+                        <!-- <group> -->
+                            <!-- <field name="photo" nolabel="1"
+                                class="oe_right oe_avatar" img_width="140"
                                 img_height="140" width="140" height="140"
-                                widget="image" />
-                        </group>
+                                widget="image" /> -->
+                            <field name="photo" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                            <div class="oe_title">
+                                <label for="patient_id" string="Patient Name"/>
+                                <h1>
+                                    <div class="d-flex">
+                                        <field class="o_text_overflow" name="patient_id" placeholder="Patient Name"/>
+                                    </div>
+                                </h1>
+                            </div>
+                        <!-- </group> -->
                         <group>
                             <group>
-                                <div class="oe_title">
+                                <!-- <div class="oe_title">
                                     <div class="oe_edit_only">
                                         <label for="patient_id" />
-                                    </div>
-                                    <h1>
+                                    </div> -->
+                                    <!-- <h1>
                                         <field style="width: 80%%" name="patient_id"
                                             default_focus="1" placeholder="Patient Name"
                                             context="{'default_is_patient': 1,'default_is_person': 1}"
                                             />
-                                    </h1>
-                                </div>
+                                    </h1> -->
+                                <!-- </div> -->
                                 <field name="name" />
                                 <field name="date_of_birth" />
                                 <field name="marital_status" />
                                 <field name="phone"></field>
+                                <field name="relative_person"></field>
+                                <field name="relative_person_phone"></field>
+                                <field name="relationship"></field>
                             </group>
                             <group>
                                 <field name="sex" />
                                 <field name="age" readonly="1" />
                                 <field name="partner_address_id" />
-                                <field name="relationship"></field>
                                 <field name="civil_number"></field>
                                 <field name="customer_file_number" ></field>
-                                <field name="relative_person"></field>
                                 <field name="civil_attachment" widget="many2many_binary" ></field>
                             </group>
                         </group>
