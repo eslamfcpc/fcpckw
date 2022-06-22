@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="state_add_to_form_view">
+            <field name="name">State Add</field>
+            <field name="model">medical.appointment</field>
+            <field name="inherit_id" ref="basic_hms.medical_appointment_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/header" position="inside">
+                    <!-- <header> -->
+                        <field name="state" 
+                            widget="statusbar"
+                            statusbar_visible="done,cancel,shifted" 
+                            />
+                    <!-- </header> -->
+                </xpath>
+            </field>
+          </record>
+     </data>
+</odoo>
