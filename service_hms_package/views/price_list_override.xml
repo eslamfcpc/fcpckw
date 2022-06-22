@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="packge_field_add_form">
+            <field name="name">Package Field</field>
+            <field name="model">product.pricelist</field>
+            <field name="inherit_id" ref="product.product_pricelist_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet//field[@name='company_id']" position="after">
+                    <field name="package"/>
+                </xpath>
+            </field>
+          </record>
+
+        <record model="ir.ui.view" id="packge_field_add_form_sale">
+            <field name="name">Package Field Sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                    <field name="package"  />
+                    <field name="days_between" attrs="{'invisible': [('package',  '=', False)]}"   />
+                    <field name="start_appoint" attrs="{'invisible': [('package',  '=', False)]}"   />
+                    <field name="doctor_id" attrs="{'invisible': [('package',  '=', False)]}"   />
+                </xpath>
+            </field>
+          </record>
+     </data>
+</odoo>
