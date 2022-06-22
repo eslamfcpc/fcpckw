@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_order_portal_template_inherit_ottu" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//section[@id='details']" position="before">
+            <section t-if="payment_trans.acquirer_id.provider in ['knet', 'cybersource', 'omannet']">
+                <h3 class="">Payment details</h3>
+                <hr class="mt-0 mb-1"/>
+                <span><strong>Gateway Name: </strong></span><span t-raw='payment_trans.ottu_gateway_name'/><br></br>
+                <span><strong>Transaction: </strong></span><span t-raw='payment_trans.ottu_result'/><br></br>
+                <span><strong>Transaction ID: </strong></span><span t-raw='payment_trans.ottu_transaction_id'/><br></br>
+                <span t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']"><strong>Payment ID: </strong></span><span t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']" t-raw='payment_trans.ottu_payment_id'/><br t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']"></br>
+                <span><strong>Auth ID: </strong></span><span t-raw='payment_trans.ottu_auth_id'/><br></br>
+                <span><strong>Track ID: </strong></span><span t-raw='payment_trans.ottu_track_id'/><br></br>
+                <span><strong>Post Date: </strong></span><span t-raw='payment_trans.date'/>
+            </section>
+        </xpath>
+    </template>
+
+    <template id="confirmation_inherit_ottu" inherit_id="website_sale.confirmation">
+        <xpath expr="//div[@id='oe_structure_website_sale_confirmation_2']" position="before">
+            <div class="card mt-3" t-if="payment_trans.acquirer_id.provider in ['knet', 'cybersource', 'omannet']">
+              <div class="card-body">
+                <div>
+                    <b>Payment details: </b><br></br><br></br>
+                    <span><strong>Gateway Name: </strong></span><span t-raw='payment_trans.ottu_gateway_name'/><br></br>
+                    <span><strong>Transaction: </strong></span><span t-raw='payment_trans.ottu_result'/><br></br>
+                    <span><strong>Transaction ID: </strong></span><span t-raw='payment_trans.ottu_transaction_id'/><br></br>
+                    <span t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']"><strong>Payment ID: </strong></span><span t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']" t-raw='payment_trans.ottu_payment_id'/><br t-if="payment_trans.acquirer_id.provider in ['knet', 'omannet']"></br>
+                    <span><strong>Auth ID: </strong></span><span t-raw='payment_trans.ottu_auth_id'/><br></br>
+                    <span><strong>Track ID: </strong></span><span t-raw='payment_trans.ottu_track_id'/><br></br>
+                    <span><strong>Post Date: </strong></span><span t-raw='payment_trans.date'/>
+                </div>
+              </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

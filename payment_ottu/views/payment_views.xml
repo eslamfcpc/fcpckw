@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="acquirer_form_ottu" model="ir.ui.view">
+            <field name="name">acquirer.form.ottu</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="acquirer"]' position='inside'>
+                    <group attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}">
+                        <field name="ottu_gateway_url" attrs="{'required':[ ('provider', 'in', ['knet', 'cybersource', 'omannet']), ('state', '!=', 'disabled')]}"/>
+                        <field name="ottu_gateway_code" attrs="{'required':[ ('provider', 'in', ['knet', 'cybersource', 'omannet']), ('state', '!=', 'disabled')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="transaction_form_ottu" model="ir.ui.view">
+            <field name="name">acquirer.transaction.form.ottu</field>
+            <field name="model">payment.transaction</field>
+            <field name="inherit_id" ref="payment.transaction_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='acquirer_reference']" position="after">
+                    <field name="ottu_result" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                    <field name="ottu_gateway_name" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                    <field name="ottu_transaction_id" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                    <field name="ottu_payment_id" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                    <field name="ottu_auth_id" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                    <field name="ottu_track_id" readonly="1" attrs="{'invisible': [('provider', 'not in', ['knet', 'cybersource', 'omannet'])]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
