@@ -323,22 +323,18 @@ class medical_patient(models.Model):
     relative_person_phone = fields.Char(related='relative_person.phone', store=True, string="Relative Person Mobile ")
     relationship = fields.Char(related='patient_id.relationship', store=True, String="Relationship")
     civil_attachment = fields.Many2many('ir.attachment', string="Civil Attachment", required=True)
+    file_id = fields.Char(string="File ID", required=True, copy=False, readonly=True,
+                           index=True, default=lambda self: _('New'))
 
 
 
     # Sequence patient Function    
-    @api.model
-    def create(self, vals):
-        patient_id  = self.env['ir.sequence'].next_by_code('file.sequence')
-        if patient_id:
-            val.update({
-                        'customer_file_number':patient_id,
-                       })
-        result = super(medical_patient, self).create(val)
-        # if vals.get('customer_file_number', _('New')) == _('New'):
-        #     vals['customer_file_number'] = self.env['ir.sequence'].next_by_code('file.sequence') or _('New')
-        # result = super(medical_patient, self).create(vals)
-        return result
+    # @api.model
+    # def create(self, vals):
+    #     if vals.get('file_id', _('New')) == _('New'):
+    #         vals['file_id'] = self.env['ir.sequence'].next_by_code('file.sequence') or _('New')
+    #     result = super(medical_patient, self).create(vals)
+    #     return result
 
     def _valid_field_parameter(self, field, name):
         return name == 'sort' or super()._valid_field_parameter(field, name)
@@ -364,6 +360,8 @@ class medical_patient(models.Model):
             val.update({
                         'name':patient_id,
                        })
+        if val.get('customer_file_number', _('New')) == _('New'):
+            val['customer_file_number'] = self.env['ir.sequence'].next_by_code('file.sequence') or _('New')
         result = super(medical_patient, self).create(val)
         return result
 
