@@ -44,7 +44,7 @@
                                 class="oe_right oe_avatar" img_width="140"
                                 img_height="140" width="140" height="140"
                                 widget="image" /> -->
-                            <field name="photo" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                            <field name="photo" widget="image" class="oe_avatar"/>
                             <div class="oe_title">
                                 <label for="patient_id" string="Patient Name"/>
                                 <h1>
@@ -71,6 +71,7 @@
                                 <field name="date_of_birth" />
                                 <field name="marital_status" />
                                 <field name="phone"></field>
+                                <field name="email"></field>
                                 <field name="relative_person"></field>
                                 <field name="relative_person_phone"></field>
                                 <field name="relationship"></field>
@@ -78,10 +79,18 @@
                             <group>
                                 <field name="sex" />
                                 <field name="age" readonly="1" />
-                                <field name="partner_address_id" />
+                                <!-- <field name="partner_address_id" /> -->
                                 <field name="civil_number"></field>
                                 <field name="customer_file_number" ></field>
                                 <field name="civil_attachment" widget="many2many_binary" ></field>
+                            </group>
+                            <group>
+                                <separator colspan="4"
+                                string="Address Information" />
+                            <newline />
+                                <field name="city"></field>
+                                <field name="state_id"></field>
+                                <field name="street"></field>
                             </group>
                         </group>
                         <group>

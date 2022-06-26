@@ -88,6 +88,10 @@ class medical_patient(models.Model):
                 rec.age = "No Date Of Birth!!"
 
 
+    street = fields.Char(string="Street", related='patient_id.street')
+    city = fields.Char(string="City", related='patient_id.city')
+    state_id = fields.Many2one('res.country.state', string="State", related='patient_id.state_id')
+    email = fields.Char(string="Email", related='patient_id.email')
     appointment_counter = fields.Char(compute='appointment_count') 
     hosp_counter = fields.Char(compute='hosptilaization_count') 
     medical_lab_counter = fields.Char(compute='lab_count') 
@@ -98,7 +102,7 @@ class medical_patient(models.Model):
     sex = fields.Selection([('m', 'Male'),('f', 'Female')], string ="Sex")
     age = fields.Char(compute=onchange_age,string="Patient Age",store=True)
     critical_info = fields.Text(string="Patient Critical Information")
-    photo = fields.Binary(string="Picture")
+    photo = fields.Binary(string="Picture",store=True)
     blood_type = fields.Selection([('A', 'A'),('B', 'B'),('AB', 'AB'),('O', 'O')], string ="Blood Type")
     rh = fields.Selection([('-+', '+'),('--', '-')], string ="Rh")
     marital_status = fields.Selection([('s','Single'),('m','Married'),('w','Widowed'),('d','Divorced'),('x','Seperated')],string='Marital Status')
@@ -315,7 +319,7 @@ class medical_patient(models.Model):
     deaths_1st_week = fields.Integer('Deceased after 1st week')
     full_term = fields.Integer('Full Term')
     ses_notes = fields.Text('Notes')
-    phone = fields.Char(String="Phone", related='patient_id.mobile', store=True)
+    phone = fields.Char(String="Phone", related='patient_id.phone', store=True)
     civil_number = fields.Char(String="Civil Number")
     customer_file_number = fields.Char(String="Customer File Number", required=True, copy=False, readonly=True,
                            index=True, default=lambda self: _('New'))
@@ -354,7 +358,6 @@ class medical_patient(models.Model):
             rd = relativedelta(d2, d1)
             age = str(rd.years) + "y" +" "+ str(rd.months) + "m" +" "+ str(rd.days) + "d"
             val.update({'age':age} )
-
         patient_id  = self.env['ir.sequence'].next_by_code('medical.patient')
         if patient_id:
             val.update({

@@ -10,6 +10,7 @@ class create_prescription_invoice(models.TransientModel):
     _description = 'Create Prescrition invoice'
 
     def create_prescription_invoice(self):
+        result = {}
         active_ids = self._context.get('active_ids')
         active_ids = active_ids or False
         lab_req_obj = self.env['medical.prescription.order']

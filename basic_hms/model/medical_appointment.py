@@ -63,6 +63,9 @@ class medical_appointment(models.Model):
 		for msg in self:
 			msg.message_post(body=msg_body)
 		result = super(medical_appointment, self).create(vals)
+		self.update({'state':'done'})
+		# self.env['create.prescription.invoice'].create_prescription_invoice()
+        # self.create_invoice()
 		return result
 
 	@api.onchange('inpatient_registration_id')
