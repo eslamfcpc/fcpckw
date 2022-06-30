@@ -94,6 +94,7 @@
         'report/patient_medications_document_report.xml',
         'report/patient_vaccinations_document_report.xml',
         'report/prescription_demo_report.xml',
+        'report/polices_report_template.xml',
     ],
     "author": "BrowseInfo",
     "website": "https://www.browseinfo.in",

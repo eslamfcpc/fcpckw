@@ -6,7 +6,6 @@ from datetime import date,datetime
 from dateutil.relativedelta import relativedelta 
 
 class medical_patient(models.Model):
-    
     _name = 'medical.patient'
     _description = 'medical patient'
     _rec_name = 'patient_id'
@@ -76,6 +75,10 @@ class medical_patient(models.Model):
     def print_report(self):
         return self.env.ref('basic_hms.report_print_patient_card').report_action(self)
 
+    def print_report_polices(self):
+        return self.env.ref('basic_hms.polices_report').report_action(self)
+
+        
     @api.depends('date_of_birth')
     def onchange_age(self):
         for rec in self:
@@ -88,6 +91,7 @@ class medical_patient(models.Model):
                 rec.age = "No Date Of Birth!!"
 
 
+    nationality = fields.Many2one('res.country', string="Nationality")
     street = fields.Char(string="Street", related='patient_id.street')
     city = fields.Char(string="City", related='patient_id.city')
     state_id = fields.Many2one('res.country.state', string="State", related='patient_id.state_id')

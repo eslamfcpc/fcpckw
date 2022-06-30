@@ -4,6 +4,7 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import Warning,UserError
 from datetime import date,datetime
+from odoo.exceptions import ValidationError
 
 class medical_appointments_invoice_wizard(models.TransientModel):
     _name = "medical.appointments.invoice.wizard"
@@ -20,8 +21,9 @@ class medical_appointments_invoice_wizard(models.TransientModel):
             lab_req = lab_req_obj.browse(active_id)
             lab_req.validity_status = 'invoice'
             if lab_req.is_invoiced  == True:
-                raise Warning('All ready Invoiced.')
+                raise ValidationError('All ready Invoiced.')
             if lab_req.no_invoice == False:
+                lab_req.state = 'done'
                 sale_journals = self.env['account.journal'].search([('type','=','sale')])
                 invoice_vals = {
                 'name': self.env['ir.sequence'].next_by_code('medical_app_inv_seq'),

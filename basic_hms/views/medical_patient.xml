@@ -11,6 +11,10 @@
                                 type="object"
                                 string="Print Patient Card" 
                                 class="oe_highlight" />
+                        <button name="print_report_polices" 
+                                type="object"
+                                string="Print Report Polices" 
+                                class="oe_highlight" />
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
@@ -79,6 +83,7 @@
                             <group>
                                 <field name="sex" />
                                 <field name="age" readonly="1" />
+                                <field name="nationality" />
                                 <!-- <field name="partner_address_id" /> -->
                                 <field name="civil_number"></field>
                                 <field name="customer_file_number" ></field>

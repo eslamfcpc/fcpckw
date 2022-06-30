@@ -60,22 +60,22 @@
 				<t t-call="basic_hms.internal_layouto">				
 					<br></br>
 					<br></br>
-						<img src='/web/binary/company_logo' style="top:100px;position:absolute;width:97%; opacity: 0.20;height:auto;"/>
+						<img src='/web/binary/company_logo' class="watermark" style="text-align: center;margin-left:-90px;top:69px;bottom:10px;position:absolute;width:115%; opacity: 0.20;height:1330px;"/>
 
 					<br></br>
 					<div class="page">
 
-						<img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/>
+						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 						<br></br>
 						<br></br>
-						<h1 class="text-primary" style="text-align: center;font-weight: 700;">  Patient Card For </h1>
-						<hr class="bg-primary" style="width:50%; height:1px;margin-left: 25%;" />
-                        <h1 class="text-primary" style="text-align: center;font-weight: 700;"><span t-field='o.name' /></h1>
+						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
+						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
+                        <h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.name' /></h1>
 						<br></br>
 						<br></br>
 						<div style="margin: auto;width: 50%;padding: 10px;">
 							<img src='basic_hms/static/description/one.png' style="width: 10%"/>
-							<h3 class="text-primary">Patient's personal information</h3>
+							<h3  style="color: #1F3997;">Patient's personal information</h3>
 							<div class="row">
 								<br></br>
 								<div class="col-6" >
@@ -127,7 +127,11 @@
 									Address:
 								</div>
 								<div class="col-6" >
-									<span t-field='o.partner_address_id.city' />
+									<span t-field='o.city' />
+									<br></br>
+									<span t-field='o.state_id.name' />
+									<br></br>
+									<span t-field='o.street' />
 								</div>
 							</div>
 							<div class="row">
@@ -144,7 +148,7 @@
 						<br></br>
 						<div style="margin: auto;width: 50%;padding: 10px;">
 							<img src='basic_hms/static/description/phone.png' style="width: 10%"/>
-							<h3 class="text-primary">Contact Information</h3>
+							<h3  style="color: #1F3997;">Contact Information</h3>
 							<div class="row">
 								<br></br>
 								<div class="col-6" >
@@ -168,7 +172,7 @@
 						<br></br>
 						<div style="margin: auto;width: 50%;padding: 10px;">
 							<img src='basic_hms/static/description/two.png' style="width: 10%"/>
-							<h3 class="text-primary">Emeregency Contacts</h3>
+							<h3  style="color: #1F3997;">Emeregency Contacts</h3>
 							<div class="row">
 								<br></br>
 								<div class="col-6" >
