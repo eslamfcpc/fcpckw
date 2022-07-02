@@ -13,7 +13,7 @@
             <field name="name">Patients</field>
             <field name="code">medical_inpatient_registrationss</field>
             <field name="prefix">INPAC</field>
-            <field name="padding">3</field>
+            <field name="padding">0</field>
         </record>
 
         <record id="medical_appointment_code_sequence" model="ir.sequence">
