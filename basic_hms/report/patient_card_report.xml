@@ -118,7 +118,7 @@
 									Nationality:
 								</div>
 								<div class="col-6" >
-									<!-- <span t-field='o.age' /> -->
+									<span t-field='o.nationality.name' />
 								</div>
 							</div>
 							<div class="row">
