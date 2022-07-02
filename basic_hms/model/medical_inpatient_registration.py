@@ -32,7 +32,8 @@ class medical_inpatient_registration(models.Model):
     
     @api.model
     def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('medical.inpatient.registration')
+        vals['name'] = self.env['ir.sequence'].next_by_code('medical.inpatient.registration') or 'REG'
+#         vals['name'] = self.env['ir.sequence'].next_by_code('medical.appointment') or 'APT'
         return super(medical_inpatient_registration, self).create(vals)
     
     
