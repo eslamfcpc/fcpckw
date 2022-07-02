@@ -28,15 +28,24 @@ class medical_inpatient_registration(models.Model):
     icu = fields.Boolean(string="ICU")
     medication_ids = fields.One2many('medical.inpatient.medication','medical_inpatient_registration_id',string='Medication')
 
+    
+    
     @api.model
-    def default_get(self, fields):
-        result = super(medical_inpatient_registration, self).default_get(fields)
-        patient_id  = self.env['ir.sequence'].next_by_code('medical.inpatient.registration')
-        if patient_id:
-            result.update({
-                        'name':patient_id,
-                       })
-        return result
+    def create(self, vals):
+        if val.get('name', _('New')) == _('New'):
+            val['name'] = self.env['ir.sequence'].next_by_code('medical.inpatient.registration') or _('New')
+        return super(medical_inpatient_registration, self).create(vals)
+    
+    
+#     @api.model
+#     def default_get(self, fields):
+#         result = super(medical_inpatient_registration, self).default_get(fields)
+#         patient_id  = self.env['ir.sequence'].next_by_code('medical.inpatient.registration')
+#         if patient_id:
+#             result.update({
+#                         'name':patient_id,
+#                        })
+#         return result
 
     def registration_confirm(self):
         self.write({'state': 'confirmed'})
