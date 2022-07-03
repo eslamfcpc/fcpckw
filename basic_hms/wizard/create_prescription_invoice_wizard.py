@@ -3,6 +3,7 @@
 
 from odoo import api, fields, models, _
 from datetime import date,datetime
+from odoo.exceptions import MissingError
 from odoo.exceptions import Warning
 
 class create_prescription_invoice(models.TransientModel):
@@ -21,7 +22,7 @@ class create_prescription_invoice(models.TransientModel):
         lab_reqs = lab_req_obj.browse(active_ids)
         for lab_req in lab_reqs:
             if len(lab_req.prescription_line_ids) < 1:
-                raise Warning('At least one prescription line is required.')
+                 raise MissingError(_("At least one prescription line is required."))
 
             if lab_req.is_invoiced == True:
                 raise Warning('All ready Invoiced.')
