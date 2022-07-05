@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="patient_update_form">
+        <field name="name">Patient Update Form</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="basic_hms.medical_patients_form_view" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_address_id']" position="after">
+                <field name="phone"></field>
+                <field name="relative_person"></field>
+                <field name="relationship"></field>
+                <field name="civil_number"></field>
+                <field name="civil_attachment" widget="many2many_binary" ></field>
+                <field name="customer_file_number" ></field>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

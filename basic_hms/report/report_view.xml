@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="report_print_prescription" model="ir.actions.report">
+            <field name="name">Prescription</field>
+            <field name="model">medical.prescription.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.prescription_demo_report</field>
+            <field name="report_file">basic_hms.prescription_demo_report</field>
+        </record>
+
+        <record id="report_print_appointment" model="ir.actions.report">
+            <field name="name">Appointment Recipts New</field>
+            <field name="model">medical.appointment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.appointment_recipts_report</field>
+            <field name="report_file">basic_hms.appointment_recipts_report</field>
+        </record>
+<!-- 
+        <report
+            id="report_patient_card"
+            string="Patient Card"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            paperformat="basic_hms.paperformat_euro"
+            name="basic_hms.report_patient_card"
+            file="basic_hms.report_patient_card"
+        /> -->
+
+        <record id="paperformat_euross" model="report.paperformat">
+            <field name="name">European A4</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">22</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">10</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <record id="report_print_patient_card" model="ir.actions.report">
+            <field name="name">Patient Card</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="paperformat_id" ref="basic_hms.paperformat_euross" />
+            <field name="report_name">basic_hms.report_patient_card</field>
+            <field name="report_file">basic_hms.report_patient_card</field>
+        </record>
+
+        <record id="report_print_patient_medications_document" model="ir.actions.report">
+            <field name="name">Medication History New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_medications_document</field>
+            <field name="report_file">basic_hms.patient_medications_document</field>
+        </record>
+
+        <record id="report_print_patient_vaccinations_document" model="ir.actions.report">
+            <field name="name">Vaccinations History New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_vaccinations</field>
+            <field name="report_file">basic_hms.patient_vaccinations</field>
+        </record>
+
+        <record id="report_print_patient_diseases_document" model="ir.actions.report">
+            <field name="name">Diseases Report New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_diseases_document</field>
+            <field name="report_file">basic_hms.patient_diseases_document</field>
+        </record>
+
+        <record id="report_print_lab_result_demo" model="ir.actions.report">
+            <field name="name">Lab Record</field>
+            <field name="model">medical.lab</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.lab_result_demo</field>
+            <field name="report_file">basic_hms.lab_result_demo</field>
+        </record>
+    </data>
+</openerp>

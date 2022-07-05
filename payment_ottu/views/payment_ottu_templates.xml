@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="ottu_form">
+            <div>
+                <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+                <input type="hidden" name="amount" t-att-value="amount"/>
+                <input type="hidden" name="currency_code" t-att-value="currency_code"/>
+                <input type="hidden" name="language" value="en"/>
+                <input type="hidden" name="gateway_url" t-att-value="gateway_url"/>
+                <input type="hidden" name="gateway_code" t-att-value="gateway_code"/>
+                <input type="hidden" name="order_no" t-att-value="order_no"/>
+                <input type="hidden" name="extra_order_no" t-att-value="extra_order_no"/>
+                <input type="hidden" name="customer_email" t-att-value="customer_email"/>
+
+                <input t-if="disclosure_url" type="hidden" name='disclosure_url' t-att-value="disclosure_url"/>
+                <input t-if="redirect_url" type="hidden" name="redirect_url" t-att-value="redirect_url"/>
+            </div>
+        </template>
+    </data>
+</odoo>

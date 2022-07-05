@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="medical_config_form_view" model="ir.ui.view">
+        <field name="name">medical.config.form.view</field>
+        <field name="model">medical.config</field>
+        <field name="arch" type="xml">
+            <form string="Medical Configuration">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="journal_id" required="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="medical_config_tree_view" model="ir.ui.view">
+        <field name="name">medical.config.tree.view</field>
+        <field name="model">medical.config</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Configuration">
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_medical_config" model="ir.actions.act_window">
+        <field name="name">Medical Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.config</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Medical Config" id="menu_medical_config"
+              parent="main_menu_configartion" action="action_medical_config"/>
+
+</odoo>
+
