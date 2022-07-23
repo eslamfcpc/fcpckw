@@ -26,6 +26,15 @@
             name="basic_hms.report_patient_card"
             file="basic_hms.report_patient_card"
         /> -->
+        
+        <report
+            id="report_patient_note"
+            string="Patient Note"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            name="basic_hms.report_patient_note"
+            file="basic_hms.report_patient_note"
+        />
 
         <record id="paperformat_euross" model="report.paperformat">
             <field name="name">European A4</field>
