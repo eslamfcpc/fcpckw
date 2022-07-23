@@ -1,17 +1,35 @@
 <odoo>
   <data>
-    <template id='report_patient_note'>
-        <t t-call='web.html_container'>
+    <template id="report_patient_note">
+			<t t-call="web.html_container">
+				<t t-call="basic_hms.internal_layouto">
           <t t-foreach='docs' t-as='doc'>
-            <h3>Date: </h3>
-            <t t-esc='doc.my_date'/>
+            <h2>Patient Name: <t t-esc='doc.patient_id.name'/></h2>
             <br/>
             <br/>
-            <br/>
-            <h3>Patient Note: </h3>
-            <t t-esc='doc.note'/>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">Note</th>
+                  <th scope="col" class="text-center">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="doc.patient_notes" t-as="line">
+                  <tr>
+                    <td class="text-center">
+                      <span t-field="line.note"/>
+                    </td>
+                    <td class="text-center">
+                      <span t-field="line.date"/>
+                    </td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
           </t>
         </t>
-      </template>
+      </t>
+		</template>
   </data>
 </odoo>
