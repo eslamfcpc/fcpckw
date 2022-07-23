@@ -91,6 +91,8 @@ class medical_patient(models.Model):
                 rec.age = "No Date Of Birth!!"
 
 
+    
+    patient_notes = fields.One2many('patient.note', 'pat_no', string='Patient Notes')
     nationality = fields.Many2one('res.country', string="Nationality")
     street = fields.Char(string="Street", related='patient_id.street')
     city = fields.Char(string="City", related='patient_id.city')
@@ -373,3 +375,15 @@ class medical_patient(models.Model):
         return result
 
 # vim=expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
+class PatientNote(models.Model):
+    _name = 'patient.note'
+    _description = 'Patient Note'
+
+
+    def _default_my_date(self):
+        return fields.Date.context_today(self)
+
+    date = fields.Date(string='Date', default=_default_my_date)
+    note = fields.Text(string='Note')
+    pat_no = fields.Many2one('medical.patient', string='Patient Note', readonly=True, invisible=True)
