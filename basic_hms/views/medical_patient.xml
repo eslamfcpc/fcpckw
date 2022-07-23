@@ -431,6 +431,23 @@
                                     </field>
                                 </group>
                             </page>
+                                
+                            <page string="Note">
+                                <!-- <group colspan="4">
+                                    <field name="my_date"/>
+                                </group>
+                                <group string='Patient Note'>
+                                    <field name="note"/>
+                                </group> -->
+                                <field name="patient_notes"
+                                    nolabel="1">
+                                    <tree>
+                                        <field name="date" />
+                                        <field name="note" />
+                                        <field name="pat_no" invisible="1" />
+                                    </tree>
+                                </field>
+                            </page>    
 
 
                         </notebook>
