@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <template id='report_patient_note'>
+        <t t-call='web.html_container'>
+          <t t-foreach='docs' t-as='doc'>
+            <h3>Date: </h3>
+            <t t-esc='doc.my_date'/>
+            <br/>
+            <br/>
+            <br/>
+            <h3>Patient Note: </h3>
+            <t t-esc='doc.note'/>
+          </t>
+        </t>
+      </template>
+  </data>
+</odoo>
