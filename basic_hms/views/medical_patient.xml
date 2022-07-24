@@ -88,6 +88,7 @@
                                 <field name="civil_number"></field>
                                 <field name="customer_file_number" ></field>
                                 <field name="civil_attachment" widget="many2many_binary" ></field>
+                                <field name="consultations_id"></field>
                             </group>
                             <group>
                                 <separator colspan="4"
