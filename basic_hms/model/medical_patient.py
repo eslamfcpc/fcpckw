@@ -93,7 +93,7 @@ class medical_patient(models.Model):
 
     
     
-    consultations_id = fields.Many2one('product.product','Consultation Service',required=True)
+    consultations_id = fields.Many2one('product.product','Consultation Service')
     patient_notes = fields.One2many('patient.note', 'pat_no', string='Patient Notes')
     nationality = fields.Many2one('res.country', string="Nationality")
     street = fields.Char(string="Street", related='patient_id.street')
