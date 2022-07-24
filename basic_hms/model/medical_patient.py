@@ -91,6 +91,11 @@ class medical_patient(models.Model):
                 rec.age = "No Date Of Birth!!"
 
 
+#     def _default_my_date(self):
+#         return fields.Date.context_today(self)
+
+#     my_date = fields.Date(string='Date', default=_default_my_date)
+#     note = fields.Text(string='Note')
     
     consultations_id = fields.Many2one('product.product','Consultation Service',required=True)
     patient_notes = fields.One2many('patient.note', 'pat_no', string='Patient Notes')

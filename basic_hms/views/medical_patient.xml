@@ -434,12 +434,6 @@
                             </page>
                                 
                             <page string="Note">
-                                <!-- <group colspan="4">
-                                    <field name="my_date"/>
-                                </group>
-                                <group string='Patient Note'>
-                                    <field name="note"/>
-                                </group> -->
                                 <field name="patient_notes"
                                     nolabel="1">
                                     <tree>
@@ -449,8 +443,7 @@
                                     </tree>
                                 </field>
                             </page>    
-
-
+                          
                         </notebook>
                     </sheet>
                 </form>

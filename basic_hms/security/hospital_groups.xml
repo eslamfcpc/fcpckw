@@ -24,8 +24,10 @@
 	
     <record id="group_patient_note" model="res.groups">
         <field name="name">Patient Note</field>
-<!--         <field name="comment">the user will have access to his own data in the Receptionist.</field> -->
+	<!-- <field name="comment">the user will have access to his own data in the Receptionist.</field> -->
     </record>
+	
+	
 
 </data>
 </odoo>

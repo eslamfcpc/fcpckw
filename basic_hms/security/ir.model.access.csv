@@ -10,7 +10,6 @@ access_patient_note,access.patient.note,model_patient_note,group_patient_note,1,
 
 
 
-
 access_diseases_category_doc,medical.group.diseases.category.doc,model_medical_pathology_category,bi_group_doctor,1,1,1,0
 access_diseases_doc,medical.group.diseases.doc,model_medical_pathology,bi_group_doctor,1,1,1,0
 
