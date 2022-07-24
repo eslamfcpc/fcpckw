@@ -140,7 +140,7 @@
 									Consultation type:
 								</div>
 								<div class="col-6" >
-									<!-- <span t-field='o.partner_address_id.city' /> -->
+									<span t-field='o.consultations_id.name' />
 								</div>
 							</div>
 						</div>
