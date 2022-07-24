@@ -11,7 +11,7 @@
     <record id="seq_file_number" model="ir.sequence">
         <field name="name">File Number Sequence</field>
         <field name="code">file.sequence</field>
-        <field name="prefix">1265</field>
+        <field name="prefix"></field>
         <field name="company_id" eval="False"/>
     </record>
 </odoo>
