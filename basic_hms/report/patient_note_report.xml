@@ -1,8 +1,59 @@
 <odoo>
   <data>
+	    <template id="internal_layoutos">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+		<div class="header row " style="height:100%;">
+			<div class="col-2" >
+				<img src='/web/binary/company_logo' style="width: 80%"/>
+			</div>
+			<div class="col-10 bg-info">
+				<h3 class="text-center text-uppercase text-nowrap text-bold" style="position: absolute;top: 35%;left: 8%;font-weight: 1000;">FUTURE COMPANY FOR PSYCHOLOGICAL COUNSELING</h3>
+			</div>
+		</div>
+
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-out="0"/>
+
+        </div>
+
+
+		<div class="footer bg-info row">
+			<div class="bg-info col-4">
+				<p>Tel: 22465646</p>
+				<br></br>
+				<p>www.fcpckw.com</p>
+			</div>
+			<div class="bg-info col-4">
+				<p class="text-center">Center address</p>
+				<p class="text-center">Al-Qibla area, Block 13, Fahd Al-Salem Street,
+					Issa Al-Saleh Building,
+					Floor 2, Office 1.
+					</p>
+			</div>
+			<div class="bg-info col-4">
+				<p class="text-right">+965 55011055</p>
+				<br></br>
+				<p class="text-right">www.fcpckw.com</p>
+			</div>
+		</div>
+    </template>
+	  
     <template id="report_patient_note">
 			<t t-call="web.html_container">
-				<t t-call="basic_hms.internal_layouto">
+				<t t-call="basic_hms.internal_layoutos">
           <t t-foreach='docs' t-as='doc'>
             <h2>Patient Name: <t t-esc='doc.patient_id.name'/></h2>
             <br/>
