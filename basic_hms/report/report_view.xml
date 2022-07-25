@@ -27,14 +27,23 @@
             file="basic_hms.report_patient_card"
         /> -->
         
-        <report
+<!--         <report
             id="report_patient_note"
             string="Patient Note"
             model="medical.patient"
             report_type="qweb-pdf"
             name="basic_hms.report_patient_note"
             file="basic_hms.report_patient_note"
-        />
+        /> -->
+        
+        <record id="report_patient_note" model="ir.actions.report">
+            <field name="name">Patient Note</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="paperformat_id" ref="basic_hms.paperformat_euross" />
+            <field name="report_name">basic_hms.report_patient_note</field>
+            <field name="report_file">basic_hms.report_patient_note</field>
+        </record>
 
         <record id="paperformat_euross" model="report.paperformat">
             <field name="name">European A4</field>
