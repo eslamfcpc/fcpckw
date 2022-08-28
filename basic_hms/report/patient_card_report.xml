@@ -58,6 +58,10 @@
 				<t t-call="basic_hms.internal_layouto">				
 					<br></br>
 					<br></br>
+					<br></br>
+					<br></br>
+					<br></br>
+					<br></br>
 						<img src='/web/binary/company_logo' class="watermark" style="text-align: center;margin-left:-90px;top:69px;bottom:10px;position:absolute;width:115%; opacity: 0.20;height:1330px;"/>
 
 					<br></br>
