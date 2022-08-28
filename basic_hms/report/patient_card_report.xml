@@ -35,19 +35,17 @@
 		<div class="footer bg-info row">
 			<div class="bg-info col-4">
 				<p>Tel: 22465646</p>
-				<br></br>
 				<p>www.fcpckw.com</p>
 			</div>
 			<div class="bg-info col-4">
 				<p class="text-center">Center address</p>
-				<p class="text-center">Al-Qibla area, Block 13, Fahd Al-Salem Street,
+				<p class="text-center">Al-Qibla area, Block13, Fahd Al-Salem Street,
 					Issa Al-Saleh Building,
-					Floor 2, Office 1.
+					Floor2, Office1.
 					</p>
 			</div>
 			<div class="bg-info col-4">
 				<p class="text-right">+965 55011055</p>
-				<br></br>
 				<p class="text-right">www.fcpckw.com</p>
 			</div>
 		</div>
@@ -63,195 +61,212 @@
 						<img src='/web/binary/company_logo' class="watermark" style="text-align: center;margin-left:-90px;top:69px;bottom:10px;position:absolute;width:115%; opacity: 0.20;height:1330px;"/>
 
 					<br></br>
-					<div class="page">
+					<t t-foreach="docs" t-as="o">
+						<t t-set="list_of_copy" t-value="['(DUPLICATE1)','(DUPLICATE)']"/>
+						<t t-foreach="list_of_copy" t-as="copy_name">
+							<div class="page">
 
-						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
-						<br></br>
-						<br></br>
-						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
-						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
-                        <h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.name' /></h1>
-						<br></br>
-						<br></br>
-						<div style="margin: auto;width: 50%;padding: 10px;">
-							<img src='basic_hms/static/description/one.png' style="width: 10%"/>
-							<h3  style="color: #1F3997;">Patient's personal information</h3>
-							<div class="row">
+								<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 								<br></br>
-								<div class="col-6" >
-									Name:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.patient_id.name' />
-								</div>
-							</div>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Civil Number :
-								</div>
-								<div class="col-6" >
-									<span t-field='o.civil_number' />
-								</div>
-							</div>
-							<div class="row">
+								<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
+								<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
+								<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.name' /></h1>
 								<br></br>
-								<div class="col-6" >
-									Gender:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.sex' />
-								</div>
-							</div>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Age:
+								<div style="margin: auto;width: 50%;padding: 10px;">
+									<img src='basic_hms/static/description/one.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Patient's personal information</h3>
+								</div>	
+								<div style="margin: auto;width: 100%;padding: 10px;font-size: 20px;">
+									<!-- <img src='basic_hms/static/description/one.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Patient's personal information</h3> -->
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Name:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.patient_id.name' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Civil Number :
+										</div>
+										<div class="col-6" >
+											<span t-field='o.civil_number' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Gender:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.sex' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Age:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.age' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Nationality:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.nationality.name' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Address:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.city' />
+											<br></br>
+											<span t-field='o.state_id.name' />
+											<br></br>
+											<span t-field='o.street' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Consultation type:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.consultations_id.name' />	
+										</div>
+									</div>
 								</div>
-								<div class="col-6" >
-									<span t-field='o.age' />
-								</div>
-							</div>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Nationality:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.nationality.name' />
-								</div>
-							</div>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Address:
+								<div style="margin: auto;width: 50%;padding: 10px;">
+									<img src='basic_hms/static/description/phone.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Contact Information</h3>
 								</div>
-								<div class="col-6" >
-									<span t-field='o.city' />
-									<br></br>
-									<span t-field='o.state_id.name' />
-									<br></br>
-									<span t-field='o.street' />
+								<div style="margin: auto;width: 100%;padding: 10px;font-size: 20px;">
+									<!-- <img src='basic_hms/static/description/phone.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Contact Information</h3> -->
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Mobile number:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.phone' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Email:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.patient_id.email' />
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Consultation type:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.consultations_id.name' />
-								</div>
-							</div>
-						</div>
-						<br></br>
-						<br></br>
-						<div style="margin: auto;width: 50%;padding: 10px;">
-							<img src='basic_hms/static/description/phone.png' style="width: 10%"/>
-							<h3  style="color: #1F3997;">Contact Information</h3>
-							<div class="row">
 								<br></br>
-								<div class="col-6" >
-									Mobile number:
+								<div style="margin: auto;width: 50%;padding: 10px;">
+									<img src='basic_hms/static/description/two.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Emeregency Contacts</h3>
 								</div>
-								<div class="col-6" >
-									<span t-field='o.phone' />
+								<div style="margin: auto;width: 100%;padding: 10px;font-size: 20px;">
+									<!-- <img src='basic_hms/static/description/two.png' style="width: 10%"/>
+									<h3  style="color: #1F3997;">Emeregency Contacts</h3> -->
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Relationship
+										</div>
+										<div class="col-6" >
+											<span t-field='o.relationship' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Name:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.relative_person.name' />
+										</div>
+									</div>
+									<div class="row">
+										<br></br>
+										<div class="col-3" >
+											Mobile Number:
+										</div>
+										<div class="col-6" >
+											<span t-field='o.relative_person_phone' />
+										</div>
+									</div>
 								</div>
+								<!-- <div class="center-block" -->
+		<!-- 						
+								<table  class="table table-bordered">
+									<tbody style="color:#ffffff; background-color:#C79756;">
+										<th scope="col-10" class="text-center" >Patient ID</th>
+										<td scope="col-2" class="text-center"><span t-field='o.name' /></td>
+									</tbody>
+									<tbody >
+										<th scope="col-10" class="text-center" >Title </th>
+										<td scope="col-2" class="text-center"><span t-field='o.patient_id.title' /></td>
+									</tbody>
+									<tbody style="color:#ffffff; background-color:#C79756;">
+										<th scope="col-10" class="text-center" >Name </th>
+										<td scope="col-2" class="text-center"><span t-field='o.patient_id.name' /></td>
+									</tbody>
+									<tbody >
+										<th scope="col-10" class="text-center" >Gender </th>
+										<td scope="col-2" class="text-center"><span t-field='o.sex' /></td>
+									</tbody>
+									<tbody style="color:#ffffff; background-color:#C79756;">
+										<th scope="col-10" class="text-center" >Date of Birth </th>
+										<td scope="col-2" class="text-center"><span t-field='o.date_of_birth' /></td>
+									</tbody>
+									<tbody >
+										<th scope="col-10" class="text-center" >Age </th>
+										<td scope="col-2" class="text-center"><span t-field='o.age' /></td>
+									</tbody>
+									<tbody style="color:#ffffff; background-color:#C79756;">
+										<th scope="col-10" class="text-center" >Blood Group </th>
+										<td scope="col-2" class="text-center"><span t-field='o.blood_type' /></td>
+									</tbody>
+									<tbody >
+										<th scope="col-10" class="text-center" >Address </th>
+										<td scope="col-2" class="text-center">												<span
+															t-raw="'%s' % o.patient_id.street if  o.patient_id.street  else ''" />
+														<span
+															t-raw="'%s' %  o.patient_id.street2 if  o.patient_id.street2  else ''" />
+														<span
+															t-raw="'%s' %  o.patient_id.country_id.name if o.patient_id.country_id.name  else ''" />
+														<span
+															t-raw="'%s' %  o.patient_id.state_id.name if  o.patient_id.state_id.name  else ''" />
+														<br></br>
+										</td>
+									</tbody>
+									<tbody style="color:#ffffff; background-color:#C79756;">
+										<th scope="col-10" class="text-center" >Phone </th>
+										<td scope="col-2" class="text-center"><span t-field='o.patient_id.mobile' /></td>
+									</tbody>
+								 </table > -->
+		
 							</div>
-							<div class="row">
-								<br></br>
-								<div class="col-6" >
-									Email:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.patient_id.email' />
-								</div>
-							</div>
-						</div>
-						<br></br>
-						<br></br>
-						<div style="margin: auto;width: 50%;padding: 10px;">
-							<img src='basic_hms/static/description/two.png' style="width: 10%"/>
-							<h3  style="color: #1F3997;">Emeregency Contacts</h3>
-							<div class="row">
-								<br></br>
-								<div class="col-6" >
-									Relationship
-								</div>
-								<div class="col-6" >
-									<span t-field='o.relationship' />
-								</div>
-							</div>
-							<div class="row">
-								<br></br>
-								<div class="col-6" >
-									Name:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.relative_person.name' />
-								</div>
-							</div>
-							<div class="row">
-								<br></br>
-								<div class="col-6" >
-									Mobile Number:
-								</div>
-								<div class="col-6" >
-									<span t-field='o.relative_person_phone' />
-								</div>
-							</div>
-						</div>
-						<!-- <div class="center-block" -->
-<!-- 						
-						<table  class="table table-bordered">
-							<tbody style="color:#ffffff; background-color:#C79756;">
-								<th scope="col-10" class="text-center" >Patient ID</th>
-								<td scope="col-2" class="text-center"><span t-field='o.name' /></td>
-							</tbody>
-							<tbody >
-								<th scope="col-10" class="text-center" >Title </th>
-								<td scope="col-2" class="text-center"><span t-field='o.patient_id.title' /></td>
-							</tbody>
-							<tbody style="color:#ffffff; background-color:#C79756;">
-								<th scope="col-10" class="text-center" >Name </th>
-								<td scope="col-2" class="text-center"><span t-field='o.patient_id.name' /></td>
-							</tbody>
-							<tbody >
-								<th scope="col-10" class="text-center" >Gender </th>
-								<td scope="col-2" class="text-center"><span t-field='o.sex' /></td>
-							</tbody>
-							<tbody style="color:#ffffff; background-color:#C79756;">
-								<th scope="col-10" class="text-center" >Date of Birth </th>
-								<td scope="col-2" class="text-center"><span t-field='o.date_of_birth' /></td>
-							</tbody>
-							<tbody >
-								<th scope="col-10" class="text-center" >Age </th>
-								<td scope="col-2" class="text-center"><span t-field='o.age' /></td>
-							</tbody>
-							<tbody style="color:#ffffff; background-color:#C79756;">
-								<th scope="col-10" class="text-center" >Blood Group </th>
-								<td scope="col-2" class="text-center"><span t-field='o.blood_type' /></td>
-							</tbody>
-							<tbody >
-								<th scope="col-10" class="text-center" >Address </th>
-								<td scope="col-2" class="text-center">												<span
-													t-raw="'%s' % o.patient_id.street if  o.patient_id.street  else ''" />
-												<span
-													t-raw="'%s' %  o.patient_id.street2 if  o.patient_id.street2  else ''" />
-												<span
-													t-raw="'%s' %  o.patient_id.country_id.name if o.patient_id.country_id.name  else ''" />
-												<span
-													t-raw="'%s' %  o.patient_id.state_id.name if  o.patient_id.state_id.name  else ''" />
-												<br></br>
-								</td>
-							</tbody>
-							<tbody style="color:#ffffff; background-color:#C79756;">
-								<th scope="col-10" class="text-center" >Phone </th>
-								<td scope="col-2" class="text-center"><span t-field='o.patient_id.mobile' /></td>
-							</tbody>
-                         </table > -->
-
-					</div>
+						</t>
+					</t>
 				</t>
 				</t>
 		</template>
