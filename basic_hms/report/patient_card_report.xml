@@ -71,6 +71,8 @@
 								<br></br>
 								<br></br>
 								<br></br>
+								<br></br>
+								<br></br>
 								<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
 								<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
 								<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.name' /></h1>
