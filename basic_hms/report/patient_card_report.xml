@@ -37,13 +37,13 @@
 				<p>Tel: 22465646</p>
 				<p>www.fcpckw.com</p>
 			</div>
-			<div class="bg-info col-5">
+			<div class="bg-info col-4">
 				<p class="text-center">Center address</p>
 				<p class="text-center">Al-Qibla area, Block13, Fahd Al-Salem Street,
 					Issa Al-Saleh Building, Floor2, Office1.
 					</p>
 			</div>
-			<div class="bg-info col-3">
+			<div class="bg-info col-4">
 				<p class="text-right">+965 55011055</p>
 				<p class="text-right">www.fcpckw.com</p>
 			</div>
@@ -65,9 +65,9 @@
 						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 						<br></br>
 						<br></br>
-						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
+						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For (copy)</h1>
 						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
-						<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.name' /></h1>
+						<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.patient_id' /></h1>
 						<br></br>
 						<br></br>
 						<div style="margin: auto;width: 50%;padding: 10px;">
