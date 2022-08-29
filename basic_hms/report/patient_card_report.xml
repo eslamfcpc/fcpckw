@@ -58,21 +58,13 @@
 				<t t-call="basic_hms.internal_layouto">				
 					<br></br>
 					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
 						<img src='/web/binary/company_logo' class="watermark" style="text-align: center;margin-left:-90px;top:69px;bottom:10px;position:absolute;width:115%; opacity: 0.20;height:1330px;"/>
 
 					<br></br>
 					<t t-foreach="docs" t-as="o">
 						<t t-set="list_of_copy" t-value="['(DUPLICATE1)','(DUPLICATE)']"/>
 						<t t-foreach="list_of_copy" t-as="copy_name">
-							<div class="page">
+							<div class="page" style="page-break-after:always;">
 
 								<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 								<br></br>
