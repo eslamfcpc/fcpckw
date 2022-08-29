@@ -65,7 +65,7 @@
 						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 						<br></br>
 						<br></br>
-						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For (copy)</h1>
+						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
 						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
 						<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.patient_id' /></h1>
 						<br></br>
@@ -276,7 +276,7 @@
 						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
 						<br></br>
 						<br></br>
-						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
+						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For (copy)</h1>
 						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
 						<h1  style="text-align: center;font-weight: 700;color: #1F3997;"><span t-field='o.patient_id' /></h1>
 						<br></br>
