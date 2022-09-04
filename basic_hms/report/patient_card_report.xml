@@ -74,13 +74,13 @@
 							<img src='basic_hms/static/description/one.png' style="width: 10%"/>
 							<h3  style="color: #1F3997;">Patient's personal information</h3>
 						</div>	
-						<div style="width: 100%;padding-left: 30px: 20px;font-size: 22px;">
+						<div style="width: 100%;padding-left: 30px;font-size: 22px;">
 							<!-- <img src='basic_hms/static/description/one.png' style="width: 10%"/>
 							<h3  style="color: #1F3997;">Patient's personal information</h3> -->
 							<div class="row">
 								<br></br>
-								<div class="col-1">
-								</div>
+<!-- 								<div class="col-1">
+								</div> -->
 								<div class="col-2" >
 									Name:
 								</div>
