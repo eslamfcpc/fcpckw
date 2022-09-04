@@ -79,10 +79,12 @@
 							<h3  style="color: #1F3997;">Patient's personal information</h3> -->
 							<div class="row">
 								<br></br>
+								<div class="col-1">
+								</div>
 								<div class="col-2" >
 									Name:
 								</div>
-								<div class="col-6" >
+								<div class="col-5" >
 									<span t-field='o.patient_id.name' />
 								</div>
 							</div>
@@ -129,9 +131,9 @@
 								</div>
 								<div class="col-6" >
 									<span t-field='o.city' />
-									<br></br>
+									<br>
 									<span t-field='o.state_id.name' />
-									<br></br>
+									<br>
 									<span t-field='o.street' />
 								</div>
 							</div>
