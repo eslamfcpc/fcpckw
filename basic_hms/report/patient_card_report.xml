@@ -131,9 +131,9 @@
 								</div>
 								<div class="col-6" >
 									<span t-field='o.city' />
-									<br>
+									
 									<span t-field='o.state_id.name' />
-									<br>
+									
 									<span t-field='o.street' />
 								</div>
 							</div>
