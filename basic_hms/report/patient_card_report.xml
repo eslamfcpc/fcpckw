@@ -56,14 +56,14 @@
 			<t t-call="web.html_container">
 				<t t-call="basic_hms.internal_layouto">				
 					<br></br>
-					<br></br>
+					
 						<img src='/web/binary/company_logo' class="watermark" style="text-align: center;margin-left:-90px;top:69px;bottom:10px;position:absolute;width:115%; opacity: 0.20;height:1330px;"/>
 
 					<br></br>
 					<div class="page" style="page-break-after:always;">
 
 						<!-- <img src='/web/binary/company_logo' style="top:400px;position:absolute;width:800%; opacity: 0.50;height:100%;"/> -->
-						<br></br>
+						
 						<br></br>
 						<h1  style="text-align: center;font-weight: 700;color: #1F3997;">  Patient Card For </h1>
 						<hr  style="width:50%; height:1px;margin-left: 25%;color: #1F3997;" />
@@ -342,9 +342,9 @@
 								</div>
 								<div class="col-6" >
 									<span t-field='o.city' />
-									<br></br>
+									
 									<span t-field='o.state_id.name' />
-									<br></br>
+									
 									<span t-field='o.street' />
 								</div>
 							</div>
