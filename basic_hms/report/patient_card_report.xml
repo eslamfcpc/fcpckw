@@ -37,8 +37,8 @@
 				<p>Tel: 22465646</p>
 				<br></br>
 				<br></br>
-				<br></br>
 				<p>www.fcpckw.com</p>
+				<br></br>
 			</div>
 			<div class="bg-info col-4">
 				<p class="text-center">Center address</p>
@@ -50,8 +50,8 @@
 				<p class="text-right">+965 55011055</p>
 				<br></br>
 				<br></br>
-				<br></br>
 				<p class="text-right">www.fcpckw.com</p>
+				<br></br>
 			</div>
 		</div>
     </template>
